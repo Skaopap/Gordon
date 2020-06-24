@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gordon/widgets/ListListeCourse.dart';
 
 class ListesCourse extends StatefulWidget {
   ListesCourse({Key key}) : super(key: key);
@@ -13,7 +14,7 @@ class _ListesCourseState extends State<ListesCourse> {
     return Scaffold(
       backgroundColor: Theme.of(context).primaryColor,
       body: SafeArea(
-          child: Text("ListesCourse")
+          child: ListListeCourse()
           ),
     );
   }

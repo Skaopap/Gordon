@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:gordon/models/MListeCourse.dart';
+import 'package:gordon/screens/listescourseInfo.dart';
 import 'package:gordon/screens/repasInfos.dart';
 import 'package:gordon/theme/colors.dart';
 import 'package:gordon/root.dart';
@@ -11,6 +13,7 @@ void main() {
     MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (context) => MRepas()),
+        ChangeNotifierProvider(create: (context) => MListeCourse()),
       ],
   child : MyApp())
     
@@ -36,7 +39,8 @@ class MyApp extends StatelessWidget {
       home: Root(),
       routes: {
         Root.routeName: (ctx) => Root(),
-        RepasInfos.routeName : (ctx) => RepasInfos()
+        RepasInfos.routeName : (ctx) => RepasInfos(),
+        ListeCourseInfos.routeName : (ctx) => ListeCourseInfos(),
       },
     );
   }
