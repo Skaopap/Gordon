@@ -56,12 +56,13 @@ class _RootState extends State<Root> {
     
     return Scaffold(
             appBar: AppBar(
+              leading: Image.asset("assets/images/gordonHead.png"),
               backgroundColor: Pink,
-              title: const Text("Gordon", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
+              title: const Text("Gordon", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+              centerTitle: true,
               actions: <Widget>[
           IconButton(
             icon: const Icon(Icons.more_vert),
-            tooltip: 'Show Snackbar',
             onPressed: () {
               
             },
@@ -83,7 +84,5 @@ class _RootState extends State<Root> {
             //backgroundColor: Theme.of(context).primaryColor,
             body: _pages[_selectedPageIndex]["page"]
           );
-      
-      
   }
 }

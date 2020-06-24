@@ -19,7 +19,7 @@ class RepasItem extends StatelessWidget {
             arguments: item.id);
       },
       child: Card(
-        color: Theme.of(context).primaryColor,
+        color: Colors.white,
         elevation: 8,
         margin: EdgeInsets.symmetric(vertical: 5, horizontal: 5),
         child: Padding(
@@ -52,11 +52,9 @@ class RepasItem extends StatelessWidget {
             title: Text(
               item.name,
               //textAlign: TextAlign.center,
-              style: TextStyle(fontWeight: FontWeight.bold),
+              style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black),
             ),
-            
-            // subtitle: Text(item.status,
-            //     style: TextStyle(fontStyle: FontStyle.italic)),
+
           )
         ),
       ),
