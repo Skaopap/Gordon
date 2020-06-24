@@ -7,6 +7,8 @@ class MListeCourseItem with ChangeNotifier
   final String beginDate;
   final String endDate;
 
+  //static const defaultList =
+
   MListeCourseItem
       (
       {
