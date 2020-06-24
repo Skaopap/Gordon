@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gordon/screens/repasInfos.dart';
+import 'package:gordon/theme/colors.dart';
 import 'package:provider/provider.dart';
 import 'package:gordon/models/MRepas.dart';
 import 'package:gordon/models/MRepasItem.dart';
@@ -40,14 +41,12 @@ class RepasItem extends StatelessWidget {
               ),
             trailing: 
               Container(
-                decoration: 
-                  BoxDecoration(
-                    color: Theme.of(context).accentColor,
-                    borderRadius: BorderRadius.circular(50)
-                  ),
-                height: 50,
-                width: 50,
-                child: Icon(Icons.chevron_right, color: Colors.white,)
+                child : Column(children: <Widget>[
+                  //Icon(Icons.access_time, size: 15 ,),
+                  //Text("20 min", style : TextStyle(color: DarkGrey),),
+                  //SizedBox(height: 15),
+                  IconButton(icon : Icon(Icons.add) , onPressed: () {},),   
+                ],)
               ),
             title: Text(
               item.name,
