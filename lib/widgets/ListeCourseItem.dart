@@ -45,7 +45,7 @@ class ListeCourseItem extends StatelessWidget {
               ),
               trailing:
               Container(
-                  child: Icon(Icons.delete, color: Pink, size: 50,),
+                  child: IconButton(icon : Icon(Icons.delete, color: DarkGrey, size: 50,), onPressed: (){},),
 
               ),
 

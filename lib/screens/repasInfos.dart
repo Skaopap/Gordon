@@ -48,7 +48,7 @@ class _RepasInfosState extends State<RepasInfos> {
         margin: EdgeInsets.symmetric(vertical: 5, horizontal: 5),
         child : ListTile(
           title: Text(
-            "Liste D'ingredients",
+            "Liste D'ingredients ui",
             style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
             textAlign: TextAlign.center,
           ),
