@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gordon/widgets/ListRepas.dart';
 
 class Repas extends StatefulWidget {
   Repas({Key key}) : super(key: key);
@@ -13,7 +14,7 @@ class _RepasState extends State<Repas> {
     return Scaffold(
       backgroundColor: Theme.of(context).primaryColor,
       body: SafeArea(
-          child: Text("Repas")
+          child: ListRepas()
           ),
     );
   }

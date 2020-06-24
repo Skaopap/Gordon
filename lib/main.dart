@@ -1,9 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:gordon/screens/repasInfos.dart';
 import 'package:gordon/theme/colors.dart';
 import 'package:gordon/root.dart';
+import 'package:gordon/models/MRepas.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(MyApp());
+  
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (context) => MRepas()),
+      ],
+  child : MyApp())
+    
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -13,8 +24,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Gordon',
       theme: ThemeData(
-            primaryColor: primaryColor,
-            accentColor: accentColor,
+            primaryColor: LightGrey,
+            //accentColor: accentColor,
             textTheme: Theme.of(context).textTheme.apply(
               bodyColor: Colors.white,
               displayColor: Colors.white,
@@ -25,6 +36,7 @@ class MyApp extends StatelessWidget {
       home: Root(),
       routes: {
         Root.routeName: (ctx) => Root(),
+        RepasInfos.routeName : (ctx) => RepasInfos()
       },
     );
   }
