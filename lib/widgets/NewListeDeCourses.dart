@@ -3,18 +3,20 @@ import 'package:intl/intl.dart';
 import 'package:gordon/theme/colors.dart';
 
 
-class NewRepas extends StatefulWidget {
-  NewRepas(this.addHandler);
+class NewListeDeCourses extends StatefulWidget {
+  NewListeDeCourses();
 
-  final Function addHandler;
+  //final Function addHandler;
 
   @override
-  _NewRepasState createState() => _NewRepasState();
+  _NewListeDeCoursesState createState() => _NewListeDeCoursesState();
 }
 
-class _NewRepasState extends State<NewRepas> {
+class _NewListeDeCoursesState extends State<NewListeDeCourses> {
 
   DateTime _selectedDate;
+  DateTime _selectedDateEnd;
+
   final amountController = TextEditingController();
 
   void _submitData() {
@@ -23,7 +25,7 @@ class _NewRepasState extends State<NewRepas> {
     Navigator.of(context).pop();
   }
 
-  void _presentDatePicker() {
+  void _presentDatePickerBegin() {
     showDatePicker(
             context: context,
             initialDate: DateTime.now(),
@@ -35,6 +37,22 @@ class _NewRepasState extends State<NewRepas> {
       }
       setState(() {
         _selectedDate = pickedData;
+      });
+    });
+  }
+
+  void _presentDatePickerEnd() {
+    showDatePicker(
+            context: context,
+            initialDate: DateTime.now(),
+            firstDate: DateTime(2020),
+            lastDate: DateTime.now())
+        .then((pickedData) {
+      if (pickedData == null) {
+        return;
+      }
+      setState(() {
+        _selectedDateEnd = pickedData;
       });
     });
   }
@@ -57,31 +75,47 @@ class _NewRepasState extends State<NewRepas> {
         child: Column(
           //crossAxisAlignment: CrossAxisAlignment.end,
           children: <Widget>[
-            Text ("Ajout Repas !", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black, fontSize: 20), textAlign: TextAlign.center,),
-            TextField(
-              decoration: InputDecoration(labelText: 'Nombre De Personne'),
-              controller: amountController,
-              keyboardType: TextInputType.number,
-              //onSubmitted: (_) => _submitData(),
-            ),
+            Text ("Générer Liste !", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black, fontSize: 20), textAlign: TextAlign.center,),
             Container(
               height: 70,
               child: Row(
                 children: <Widget>[
                   Expanded(
                     child: Text(_selectedDate == null
-                        ? 'Pas de date choisie !'
-                        : 'Date choisie : ${DateFormat.yMd().format(_selectedDate)}',
+                        ? 'Pas de date de début choisie !'
+                        : 'Date de début choisie : ${DateFormat.yMd().format(_selectedDate)}',
                         style: TextStyle(color: Colors.black),),
                         
                   ),
                   FlatButton(
                     textColor: Theme.of(context).primaryColor,
                     child: Text(
-                      'Choisir Date',
+                      'Choisir Date Début',
                       style: TextStyle(fontWeight: FontWeight.bold, color: Colors.blue,),
                     ),
-                    onPressed: _presentDatePicker,
+                    onPressed: _presentDatePickerBegin,
+                  ),
+                ],
+              ),
+            ),
+            Container(
+              height: 70,
+              child: Row(
+                children: <Widget>[
+                  Expanded(
+                    child: Text(_selectedDateEnd == null
+                        ? 'Pas de date de fin choisie !'
+                        : 'Date de fin choisie : ${DateFormat.yMd().format(_selectedDateEnd)}',
+                        style: TextStyle(color: Colors.black),),
+                        
+                  ),
+                  FlatButton(
+                    textColor: Theme.of(context).primaryColor,
+                    child: Text(
+                      'Choisir fin Début',
+                      style: TextStyle(fontWeight: FontWeight.bold, color: Colors.blue,),
+                    ),
+                    onPressed: _presentDatePickerEnd,
                   ),
                 ],
               ),
@@ -96,13 +130,13 @@ class _NewRepasState extends State<NewRepas> {
                 Container(
                   
               height: 50,
-              width: 200,
+              width: 150,
               child: Card(
                   
                   color: Pink,
                   elevation: 8,
                   //margin: EdgeInsets.symmetric(vertical: 5, horizontal: 5),
-                  child: Text("Ajouter Repas" , style: TextStyle(color: White, fontWeight: FontWeight.bold, fontSize: 25), textAlign: TextAlign.center,
+                  child: Text("Générer" , style: TextStyle(color: White, fontWeight: FontWeight.bold, fontSize: 25), textAlign: TextAlign.center,
                   ),
                 ),
                 ),
