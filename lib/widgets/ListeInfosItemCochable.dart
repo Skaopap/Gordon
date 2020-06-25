@@ -39,7 +39,6 @@ class _ListeInfosItemCochableState extends State<ListeInfosItemCochable> {
             child: ListTile(
                 title: Text(
                   widget.Ingredient,
-                  //textAlign: TextAlign.center,
                   style: TextStyle(
                       fontWeight: FontWeight.bold,
                       color: Colors.black
@@ -47,8 +46,6 @@ class _ListeInfosItemCochableState extends State<ListeInfosItemCochable> {
                 ),
                 trailing:
                 IconButton(icon: State?Icon(Icons.check,color: Colors.green,):Icon(Icons.close,color: Colors.red,), onPressed: (){_handleTap();})
-              // subtitle: Text(item.status,
-              //     style: TextStyle(fontStyle: FontStyle.italic)),
             )
         ),
       );
