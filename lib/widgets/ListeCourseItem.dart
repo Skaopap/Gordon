@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:gordon/screens/listescourseInfo.dart';
 import 'package:gordon/theme/colors.dart';
 import 'package:provider/provider.dart';
-import 'package:gordon/models/MListeCourse.dart';
 import 'package:gordon/models/MListeCourseItem.dart';
 
 class ListeCourseItem extends StatelessWidget {

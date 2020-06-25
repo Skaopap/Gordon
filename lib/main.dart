@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gordon/models/MCalendrier.dart';
 import 'package:gordon/models/MListeCourse.dart';
 import 'package:gordon/screens/listescourseInfo.dart';
 import 'package:gordon/screens/repasInfos.dart';
@@ -14,6 +15,7 @@ void main() {
       providers: [
         ChangeNotifierProvider(create: (context) => MRepas()),
         ChangeNotifierProvider(create: (context) => MListeCourse()),
+        ChangeNotifierProvider(create: (context) => MCalendrier()),
       ],
   child : MyApp())
     

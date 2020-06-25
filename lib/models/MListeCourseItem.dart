@@ -7,16 +7,14 @@ class MListeCourseItem with ChangeNotifier
   final String beginDate;
   final String endDate;
 
-  //static const defaultList =
-
   MListeCourseItem
       (
-      {
-        @required this.id,
-        @required this.generateDate,
-        @required this.beginDate,
-        @required this.endDate
-      }
+        {
+          @required this.id,
+          @required this.generateDate,
+          @required this.beginDate,
+          @required this.endDate
+        }
       );
       
 }

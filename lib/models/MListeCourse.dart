@@ -1,4 +1,3 @@
-import 'package:provider/provider.dart';
 import 'package:gordon/models/MListeCourseItem.dart';
 import 'package:flutter/material.dart';
 
@@ -12,6 +11,4 @@ class MListeCourse with ChangeNotifier
   List<MListeCourseItem> get listItems {
     return [..._listItems];
   }
-
-//notifyListeners();
 }
