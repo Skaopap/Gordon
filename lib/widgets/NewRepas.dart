@@ -62,6 +62,7 @@ class _NewRepasState extends State<NewRepas> {
               decoration: InputDecoration(labelText: 'Nombre De Personne'),
               controller: amountController,
               keyboardType: TextInputType.number,
+              style: TextStyle(color: Colors.black),
               //onSubmitted: (_) => _submitData(),
             ),
             Container(
