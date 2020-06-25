@@ -25,17 +25,14 @@ class _RootState extends State<Root> {
        {
         'page':Repas(),
         'title':'Repas',
-        //'color':Colors.blue
       },
       {
         'page':Calendrier(),
         'title':'Calendrier',
-        //'color':Colors.blue
       },
       {
         'page':ListesCourse(),
         'title':'ListesCourse',
-        //'color':Colors.red
       }
     ];
     
